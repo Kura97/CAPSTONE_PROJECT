@@ -1,0 +1,11 @@
+        #for Review
+    path("list_products/", views.list_products, name="list products"),
+    path("add_product/", views.add_product, name="Add product"),
+    path("update_review/<review_id>", views.update_review, name="update review"),
+    path("delete_review/<review_id>", views.delete_review, name="delete review"),
+
+        #for Profile
+    path("list_products/", views.list_products, name="list products"),
+    path("add_product/", views.add_product, name="Add product"),
+    path("update_profile/<profile_id>", views.update_profile, name="update profile"),
+    path("delete_profile/<profile_id>", views.delete_profile, name="delete profile"),
