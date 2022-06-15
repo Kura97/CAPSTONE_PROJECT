@@ -1,0 +1,416 @@
+{
+	"info": {
+		"_postman_id": "c78ce695-bd0e-44ce-bc14-3a97ac852858",
+		"name": "Lend_and_Borrow_items Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "accounts",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"username\": \"Abdulaziz2\",\r\n\"email\": \"Abdulaziz@MyWebsite.com\",\r\n\"password\": \"123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/accounts_app/register/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"accounts_app",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"username\": \"Abdulaziz2\",\r\n    \"password\": \"123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/accounts_app/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"accounts_app",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "add_product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU1NDY2MjgxLCJpYXQiOjE2NTUyMDcwODEsImp0aSI6ImY0YzY0YTA4MzA3YzRkYjdhZTRlYjNmYjQ0YTMzOTc0IiwidXNlcl9pZCI6MX0.absSkuLqouBK7TlfoTPFIq8OC0ax_XkJGmDSe5pifGQ",
+								"type": "default"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"title\": \"product1\",\r\n\"description\": \"something . . .\",\r\n\"price\": \"100\",\r\n\"image\": \"https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/Category_400x400/NOKIA_CatTile.jpg\",\r\n\"rental_period\": \"1\",\r\n\"user\": \"1\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/main_app/add_product/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"main_app",
+								"add_product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list_products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/main_app/list_products/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"main_app",
+								"list_products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU1NDcxODY0LCJpYXQiOjE2NTUyMTI2NjQsImp0aSI6IjRlNjZjYmYzM2E3ZjQwNDc5MTg2MWE5NTkzOGU3YmViIiwidXNlcl9pZCI6M30.VTplIwEQZwpAJ8K-x0eNhB6gmHvwZXMG-90ueWjovqM",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/main_app/delete_product/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"main_app",
+								"delete_product",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search_product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/main_app/search_product/product1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"main_app",
+								"search_product",
+								"product1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_product",
+					"request": {
+						"method": "PUT",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "add_profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU1NDY2MjgxLCJpYXQiOjE2NTUyMDcwODEsImp0aSI6ImY0YzY0YTA4MzA3YzRkYjdhZTRlYjNmYjQ0YTMzOTc0IiwidXNlcl9pZCI6MX0.absSkuLqouBK7TlfoTPFIq8OC0ax_XkJGmDSe5pifGQ",
+								"type": "default"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"title\": \"product1\",\r\n\"description\": \"something . . .\",\r\n\"price\": \"100\",\r\n\"image\": \"https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/Category_400x400/NOKIA_CatTile.jpg\",\r\n\"rental_period\": \"1\",\r\n\"user\": \"1\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/main_app/add_product/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"main_app",
+								"add_product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list_profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/main_app/list_products/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"main_app",
+								"list_products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_profile",
+					"request": {
+						"method": "PUT",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "add_review",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU1NDY2MjgxLCJpYXQiOjE2NTUyMDcwODEsImp0aSI6ImY0YzY0YTA4MzA3YzRkYjdhZTRlYjNmYjQ0YTMzOTc0IiwidXNlcl9pZCI6MX0.absSkuLqouBK7TlfoTPFIq8OC0ax_XkJGmDSe5pifGQ",
+								"type": "default"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"title\": \"product1\",\r\n\"description\": \"something . . .\",\r\n\"price\": \"100\",\r\n\"image\": \"https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/Category_400x400/NOKIA_CatTile.jpg\",\r\n\"rental_period\": \"1\",\r\n\"user\": \"1\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/main_app/add_product/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"main_app",
+								"add_product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list_reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/main_app/list_products/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"main_app",
+								"list_products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_review",
+					"request": {
+						"method": "PUT",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "delete_review",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU1NDcxODY0LCJpYXQiOjE2NTUyMTI2NjQsImp0aSI6IjRlNjZjYmYzM2E3ZjQwNDc5MTg2MWE5NTkzOGU3YmViIiwidXNlcl9pZCI6M30.VTplIwEQZwpAJ8K-x0eNhB6gmHvwZXMG-90ueWjovqM",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/main_app/delete_product/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"main_app",
+								"delete_product",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
