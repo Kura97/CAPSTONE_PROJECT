@@ -10,6 +10,9 @@ from django.contrib.auth.models import User
 
 
 class Product(models.Model):
+    '''
+    Product model
+    '''
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)
     price = models.IntegerField()
@@ -23,7 +26,9 @@ class Product(models.Model):
 
 
 class Review(models.Model):
-
+    '''
+    Review model
+    '''
     RATING_CHOICES = (
     (1, 1),
     (2, 2),
@@ -39,10 +44,16 @@ class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
+
 class Profile(models.Model):
+    '''
+    Profile model
+    '''
     name = models.CharField(max_length=64)
     bio = models.TextField(null=True, max_length=1024)
-    image = models.URLField()
+    image = models.URLField(null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
   
+    def __str__(self):
+        return self.name

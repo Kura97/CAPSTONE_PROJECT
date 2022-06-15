@@ -27,8 +27,6 @@ SECRET_KEY = 'django-insecure-k54q^k*-*!60n4y@-3!s=ke#7sn600l27fhcr1de!9(&rgs7ma
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -80,11 +78,22 @@ WSGI_APPLICATION = 'Lend_and_Borrow_Items.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': BASE_DIR / 'db.sqlite3',
+
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'DB_BackEnd',
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost'
+
     }
 }
 
+import dj_database_url
+DATABASES = {  'default': dj_database_url.config() }
+
+ALLOWED_HOSTS = ['abdulaziz22-djangoo.herokuapp.com', 'localhost', '127.0.0.1']
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
