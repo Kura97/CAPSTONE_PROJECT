@@ -1,12 +1,9 @@
-from asyncio.windows_events import NULL
 from datetime import date
-from operator import mod
-from re import T
 from secrets import choice
-from tkinter import CASCADE
 from django.db import models
 from django.contrib.auth.models import User
 
+#some comment
 
 
 class Product(models.Model):
@@ -52,7 +49,7 @@ class Profile(models.Model):
     name = models.CharField(max_length=64)
     bio = models.TextField(null=True, max_length=1024)
     image = models.URLField(null=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
   
     def __str__(self):
